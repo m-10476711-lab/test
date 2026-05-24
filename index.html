@@ -113,11 +113,13 @@
         name: "MID RIZZ",
         phone: "601163397153",
         image: "https://i.imgur.com/u7vEh4X.jpg"
+        
       },
       {
         name: "ACAP STORE",
         phone: "60149367379",
         image: "https://i.imgur.com/u7vEh4X.jpg"
+        verified: true
       }
       // Tambah lagi seller ikut format di atas
     ];
@@ -134,10 +136,14 @@
         img.className = "avatar";
         card.appendChild(img);
 
-        const uname = document.createElement("div");
-        uname.className = "username";
-        uname.innerText = s.name;
-        card.appendChild(uname);
+       const uname = document.createElement("div");
+uname.className = "username";
+uname.innerHTML = s.name + (s.verified ? `
+  <span style="margin-left:8px;vertical-align:middle;">
+    <svg width="19" height="19" viewBox="0 0 24 24"><path fill="#39f" d="M12 1.75c.9 0 1.71.57 2 .96l.98 1.2c.3.37.86.49 1.29.25l1.3-.73l.05-.03c.7-.39 1.6-.13 2 .56c.21.37.23.77.07 1.1l-.63 1.35a1 1 0 0 0 .24 1.19l1.14.9c.68.52.73 1.52.11 2.15l-1 1.03a1 1 0 0 0-.23 1.03l.47 1.41c.23.64-.06 1.33-.67 1.59l-1.32.58a1 1 0 0 0-.61.8l-.13 1.48c-.09.77-.76 1.33-1.54 1.22l-1.45-.2a1 1 0 0 0-.98.36l-1 1.15c-.54.62-1.58.5-2.01-.23l-.84-1.39a1 1 0 0 0-.92-.54l-1.47.11c-.77.06-1.37-.57-1.21-1.33l.31-1.51a1 1 0 0 0-.54-.99l-1.19-.79c-.59-.4-.7-1.27-.23-1.83l.99-1.21a1 1 0 0 0 .16-1.07l-.73-1.39c-.32-.6-.01-1.36.68-1.56l1.47-.41a1 1 0 0 0 .7-.54l.59-1.34c.32-.71 1.19-1.01 1.85-.61l1.29.77c.38.22.89.11 1.14-.28l.86-1.28c.3-.44.86-.7 1.44-.7Z"/><path fill="#fff" d="M17.1 10.32a1 1 0 0 1 0 1.41l-5.38 5.37a1 1 0 0 1-1.41 0l-2.49-2.48a1 1 0 1 1 1.41-1.41l1.78 1.78l4.67-4.67a1 1 0 0 1 1.42 0Z"/></svg>
+  </span>
+` : "");
+card.appendChild(uname);
 
         const phone = document.createElement("div");
         phone.className = "phone";
