@@ -83,6 +83,22 @@
   </style>
 </head>
 <body>
+   
+  <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('bg-music');
+    function tryPlay() {
+      audio.play().catch(()=>{});
+      document.body.removeEventListener('click', tryPlay);
+      document.body.removeEventListener('touchstart', tryPlay);
+    }
+    audio.play().catch(()=>{});
+    document.body.addEventListener('click', tryPlay, {once:true});
+    document.body.addEventListener('touchstart', tryPlay, {once:true});
+  });
+  </script>
+</body>
   <div class="container">
     <h1>Trusted Sellers & Midman </h1>
     <div class="subtitle">Senarai rasmi trusted seller di <b>Malaysia</b>. Klik WhatsApp untuk chat terus.</div>
